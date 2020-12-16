@@ -1,4 +1,5 @@
 const algorithmia = require('algorithmia')
+const sentenceBoundaryDetection = require('sbd')
 
 async function robot(content) {
   await fetchContentFromWikipedia(content)
@@ -19,6 +20,7 @@ async function robot(content) {
       const withoutDates = removeDates(withoutMarkdown)
       
       content.sourceContentSanitized = withoutDates
+      content.sentences = breakContentIntoSentences(content.sourceContentSanitized)
 
       function removeBlankLines(text) {
         const allLines = text.split('\n')
@@ -32,6 +34,20 @@ async function robot(content) {
 
       function removeDates(text) {
         return text.replace(/ ?\(\w+ \d{2}, \d{4} . \w+ \d{2}, \d{4}\) ?/g, '')
+      }
+
+      function breakContentIntoSentences(text) {
+        const sentences = []
+
+        sentenceBoundaryDetection.sentences(text).forEach(sentence => {
+          sentences.push({
+            text: sentence,
+            keywords: [],
+            images: []
+          })
+        })
+
+        return sentences
       }
   }
 }
