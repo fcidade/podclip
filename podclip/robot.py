@@ -3,7 +3,10 @@ from dataclasses import dataclass
 
 @dataclass
 class RobotState:
-  pass
+  video_path: str # In
+  clip_start: str # In
+  clip_end: str   # In
+  clip_path: str  # Out
 
 class Robot(metaclass=ABCMeta):
   
