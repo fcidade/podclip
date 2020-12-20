@@ -4,3 +4,7 @@ node_modules/
 videos/
 *.pyc
 __pycache__/
+*.mp3
+*.mp4
+*.wmv
+*.wav
