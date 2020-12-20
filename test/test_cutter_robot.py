@@ -6,9 +6,6 @@ import logging
 
 class TestCutterRobot(TestCase):
 
-  def setUp(self):
-    logging.basicConfig(level=logging.INFO, format='%(message)s')
-
   def test_subclip_called_with_right_parameters(self):
     prev_state = RobotState(
       video_path=join('test', 'resources', 'videos', 'a deriva 6 - arthur petry.mp4'),

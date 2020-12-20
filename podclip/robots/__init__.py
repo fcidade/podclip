@@ -7,3 +7,5 @@ from .thumbnail_robot import ThumbnailRobot
 from .title_robot import TittleRobot
 from .twitter_robot import TwitterRobot
 from .upload_robot import UploadRobot
+from .speech_recognizer_robot import SpeechRecognizerRobot
+from .audio_extractor_robot import AudioExtractorRobot
