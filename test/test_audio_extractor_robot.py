@@ -7,9 +7,6 @@ import logging
 
 class TestAudioExtractorRobot(TestCase):
 
-  def setUp(self):
-    logging.basicConfig(level=logging.INFO, format='%(message)s')
-
   def test_convert_called_with_right_parameters(self):
     prev_state = RobotState(
       clip_path=join('test', 'resources', 'videos', 'clip0.mp4'),
