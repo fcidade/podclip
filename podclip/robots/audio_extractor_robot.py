@@ -9,4 +9,5 @@ class AudioExtractorRobot(Robot):
 
     mp.VideoFileClip(state.clip_path).audio.write_audiofile(state.clip_audio_path)
 
+    logging.info(f'Audio file seved on "{state.clip_audio_path}"!')
     return state
