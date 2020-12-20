@@ -1,2 +1,6 @@
 node_modules/
 *.env
+.env/
+videos/
+*.pyc
+__pycache__/
