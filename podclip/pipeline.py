@@ -3,6 +3,8 @@ from podclip.robot import Robot, RobotState
 from podclip.robots import (
   AnalyticsRobot,
   CutterRobot,
+  AudioExtractorRobot,
+  SpeechRecognizerRobot
   DescriptionRobot,
   DownloadRobot,
   TagsRobot,
@@ -19,7 +21,10 @@ def pipeline():
     DownloadRobot(),
     AnalyticsRobot(),
     CutterRobot(),
+    AudioExtractorRobot(),
+    SpeechRecognizerRobot(),
     TittleRobot(),
+    # CoolPhraseForThumbnailRobot(),
     ThumbnailRobot(),
     DescriptionRobot(),
     TagsRobot(),
@@ -28,9 +33,7 @@ def pipeline():
   ]
   
   curr_state = RobotState()
-  #print(curr_state)
   for robot in robots:
     curr_state = robot.run(curr_state)
-    #print(curr_state)
 
   print('Finished.')
