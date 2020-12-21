@@ -7,6 +7,7 @@ import logging
 
 class TestThumbnailRobot(TestCase):
 
+  @skip
   def test_learning(self):
     prev_state = RobotState(
       thumb_frame=join('test', 'resources', 'videos', 'frame.png'),
