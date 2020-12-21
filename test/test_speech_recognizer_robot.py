@@ -18,3 +18,11 @@ class TestSpeechRecognizerRobot(TestCase):
     with mock.patch('podclip.robots.cutter_robot.ffmpeg_extract_subclip') as m:
       state = SpeechRecognizerRobot().run(prev_state)
       
+  @skip
+  def test_learning(self):
+    prev_state = RobotState(
+      clip_audio_path=join('test', 'resources', 'videos', 'clip1-audio.wav'),
+      language='pt-BR',
+    )
+    state = SpeechRecognizerRobot().run(prev_state)
+      
