@@ -25,9 +25,10 @@ def pipeline():
     SpeechRecognizerRobot(),
     TittleRobot(),
     # CoolPhraseForThumbnailRobot(),
-    ThumbnailRobot(),
     DescriptionRobot(),
     TagsRobot(),
+    # CoolestFrame() -> https://github.com/Zulko/moviepy/issues/702
+    ThumbnailRobot(),
     UploadRobot(),
     TwitterRobot(),
   ]

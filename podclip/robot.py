@@ -3,14 +3,18 @@ from dataclasses import dataclass, field
 
 @dataclass
 class RobotState:
-  video_path:               str = field(default='')       # System path
+  video_path:               str = field(default='')       # Video path
   clip_start:               int = field(default=0)        # In seconds
   clip_end:                 int = field(default=0)        # In seconds
-  clip_path:                str = field(default='')       # System path
+  clip_path:                str = field(default='')       # Video path
 
-  clip_audio_path:          str = field(default='')       # System path
+  clip_audio_path:          str = field(default='')       # Audio path
   language:                 str = field(default='')       # Audio language
   clip_audio_transcription: str = field(default='')       # Audio transcription
+
+  thumb_frame:              str = field(default='')       # Image path
+  thumb_quote:              str = field(default='')       # Best quote
+  thumb_path:               str = field(default='')       # Image path
 
 class Robot(metaclass=ABCMeta):
   
