@@ -3,6 +3,8 @@ from dataclasses import dataclass, field
 
 @dataclass
 class RobotState:
+  youtube_url:              str = field(default='')       # Video URL
+
   video_path:               str = field(default='')       # Video path
   clip_start:               int = field(default=0)        # In seconds
   clip_end:                 int = field(default=0)        # In seconds

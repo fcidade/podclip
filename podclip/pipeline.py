@@ -1,6 +1,7 @@
 from typing import List
 from podclip.robot import Robot, RobotState
 from podclip.robots import (
+  UserInputRobot,
   AnalyticsRobot,
   CutterRobot,
   AudioExtractorRobot,
@@ -14,24 +15,35 @@ from podclip.robots import (
   UploadRobot,
 )
 
-def pipeline():
-  print('Starting...')
-  
-  robots: List[Robot] = [
+def make_manual() -> List[Robot]:
+  return [
+    UserInputRobot(), #TODO
     DownloadRobot(),
-    AnalyticsRobot(),
     CutterRobot(),
-    AudioExtractorRobot(),
-    SpeechRecognizerRobot(),
-    TittleRobot(),
-    # CoolPhraseForThumbnailRobot(),
-    DescriptionRobot(),
-    TagsRobot(),
-    # CoolestFrame() -> https://github.com/Zulko/moviepy/issues/702
     ThumbnailRobot(),
     UploadRobot(),
     TwitterRobot(),
   ]
+
+def pipeline():
+  print('Starting...')
+  
+  #robots = [
+  #  DownloadRobot(),
+  #  AnalyticsRobot(),
+  #  CutterRobot(),
+  #  AudioExtractorRobot(),
+  #  SpeechRecognizerRobot(),
+  #  TittleRobot(),
+  #  # CoolPhraseForThumbnailRobot(),
+  #  DescriptionRobot(),
+  #  TagsRobot(),
+  #  # CoolestFrame() -> https://github.com/Zulko/moviepy/issues/702
+  #  ThumbnailRobot(),
+  #  UploadRobot(),
+  #  TwitterRobot(),
+  #]
+  robots = make_manual()
   
   curr_state = RobotState()
   for robot in robots:
