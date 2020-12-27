@@ -18,11 +18,12 @@ class ThumbnailRobot(Robot):
     self.pd = 10
   
   def run(self, state: RobotState) -> RobotState:
-    logging.info(f'Generating Thumbnail w/ frame "{state.thumb_frame}" and quote "{state.thumb_quote}"...')
+    logging.info(f'Generating Thumbnail w/ frame "{state.thumb_frame_path}" and quote "{state.thumb_quote}"...')
 
     thumbnail = Image.new('RGB', self.dimensions, color='#e9345a')
-    frame = Image.open(state.thumb_frame, 'r')
+    frame = Image.open(state.thumb_frame_path, 'r')
     frame = frame.resize(self.frame_with_padding)
+
 
     thumbnail.paste(frame, self.frame_pivot)
     frame.close()

@@ -9,8 +9,8 @@ class CutterRobot(Robot):
     logging.info(f'Start: {state.clip_start}s End: {state.clip_end}s')
 
     ffmpeg_extract_subclip(
-      state.video_path, 
-      state.clip_start, state.clip_end, 
+      state.video_path,
+      state.clip_start, state.clip_end,
       targetname=state.clip_path
     )
 

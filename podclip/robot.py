@@ -14,7 +14,7 @@ class RobotState:
   language:                 str = field(default='')       # Audio language
   clip_audio_transcription: str = field(default='')       # Audio transcription
 
-  thumb_frame:              str = field(default='')       # Image path
+  thumb_frame_path:         str = field(default='')       # Image path
   thumb_quote:              str = field(default='')       # Best quote
   thumb_path:               str = field(default='')       # Image path
 

@@ -2,10 +2,11 @@ from typing import List
 from podclip.robot import Robot, RobotState
 from podclip.robots import (
   UserInputRobot,
+  ConfigFileRobot,
   AnalyticsRobot,
   CutterRobot,
   AudioExtractorRobot,
-  SpeechRecognizerRobot
+  SpeechRecognizerRobot,
   DescriptionRobot,
   DownloadRobot,
   TagsRobot,
@@ -17,7 +18,7 @@ from podclip.robots import (
 
 def make_manual() -> List[Robot]:
   return [
-    UserInputRobot(), #TODO
+    ConfigFileRobot(), #TODO
     DownloadRobot(),
     CutterRobot(),
     ThumbnailRobot(),
